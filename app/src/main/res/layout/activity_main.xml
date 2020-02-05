@@ -8,6 +8,16 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/drive2"
+        android:layout_width="match_parent"
+        android:layout_height="258dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/drive"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="31dp" />
+
     <TextView
         android:id="@+id/examtext"
         android:layout_width="match_parent"
@@ -23,10 +33,10 @@
         android:id="@+id/wow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
+        android:layout_marginTop="528dp"
         android:text="로그아웃 및 회원탈퇴"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
