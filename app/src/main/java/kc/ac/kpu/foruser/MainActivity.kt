@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         val database : FirebaseDatabase = FirebaseDatabase.getInstance()
 val myRef : DatabaseReference = database.getReference("message/text1")
-// var tv = findViewById(R.id.examtext) as TextView
+var tv = findViewById(R.id.examtext) as TextView
 
 myRef.addValueEventListener(object : ValueEventListener {
     override fun onCancelled(p0: DatabaseError) {
@@ -41,12 +41,17 @@ myRef.addValueEventListener(object : ValueEventListener {
 
 
     override fun onDataChange(dataSnapshot: DataSnapshot) {
-/*
-                val value = dataSnapshot?.value
-                tv.text = "$value"
+        val option = dataSnapshot.exists()
+        if (option == true) {
+            val value = dataSnapshot.children.elementAt(0).value
 
+            tv.text = "$value"
+            //나중에 저장해서 워치로 보내려면 임시로 저장해야함
+            //   string = tv.text as String?
 
- */
+        } else {
+            tv.text = "메세지 전송 중입니다."
+        }
 
     }
 

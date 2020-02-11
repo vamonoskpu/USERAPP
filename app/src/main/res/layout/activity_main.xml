@@ -17,18 +17,17 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/drive"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="31dp" />
+        tools:layout_editor_absoluteY="90dp" />
 
     <TextView
         android:id="@+id/examtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="163dp"
+        android:layout_marginTop="424dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/wow"
