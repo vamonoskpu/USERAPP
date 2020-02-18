@@ -4,9 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
@@ -25,13 +28,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        progress_bar.visibility = View.VISIBLE
+
+        // Bottom Navigation View
+        bottom_navigation.setOnNavigationItemSelectedListener(this)
+        bottom_navigation.selectedItemId = R.id.action_home
+
+
         wow.setOnClickListener{
             val nextIntent = Intent(this, ProfileActivity::class.java)
             startActivity(nextIntent)
         }
 
         val database : FirebaseDatabase = FirebaseDatabase.getInstance()
-val myRef : DatabaseReference = database.getReference("message/text1")
+val myRef : DatabaseReference = database.getReference("message")
 var tv = findViewById(R.id.examtext) as TextView
 
 myRef.addValueEventListener(object : ValueEventListener {
@@ -58,4 +68,5 @@ myRef.addValueEventListener(object : ValueEventListener {
 
 })
 }
+
 }
