@@ -6,20 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/dark_grey"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context="kc.ac.kpu.foruser.MainActivity"
+    tools:context=".order"
     tools:deviceIds="wear">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/inner_frame_layout_padding"
-        >
-
-        <TextView
-            android:id="@+id/examtext"
-            android:layout_width="wrap_content"
-            android:layout_height="58dp"
-            android:layout_gravity="center" />
-
-    </FrameLayout>
+        app:boxedEdges="all"/>
 </androidx.wear.widget.BoxInsetLayout>
