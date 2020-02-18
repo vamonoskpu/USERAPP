@@ -1,4 +1,4 @@
-package kc.ac.kpu.wear
+package kc.ac.kpu.foruser
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.support.wearable.activity.WearableActivity
 import android.widget.TextView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
+import kc.ac.kpu.wear.R
 
 
 class MainActivity : WearableActivity() {
