@@ -12,21 +12,13 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:boxedEdges="all">
+        android:padding="@dimen/inner_frame_layout_padding"/>
 
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="302dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/accept_deny_dialog_positive_bg"
-            android:text="@string/hello_world" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+    <TextView
+        android:id="@+id/examtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
-    </FrameLayout>
 </androidx.wear.widget.BoxInsetLayout>
