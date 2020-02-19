@@ -10,47 +10,7 @@
     tools:context=".MainActivity">
 
 
-    <!-- Toolbar -->
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_alignParentTop="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/toolbar_title_image"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                android:layout_margin="3dp"
-                android:src="@drawable/user" />
-
-            <ImageView
-                android:id="@+id/toolbar_btn_back"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_arrow_back"
-                android:layout_alignParentLeft="true"
-                android:layout_marginRight="22dp"
-                />
-
-            <TextView
-                android:id="@+id/toolbar_username"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:gravity="center"
-                android:textColor="@color/colorNavIcon"
-                android:textSize="16sp"
-                android:visibility="gone"
-                android:layout_toRightOf="@id/toolbar_btn_back" />
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
 
 
     <Button
@@ -159,6 +119,7 @@
             android:layout_above="@id/bottom_navigation"
             android:background="@color/colorDivision"
             android:orientation="horizontal" />
+
     </FrameLayout>
 
 
