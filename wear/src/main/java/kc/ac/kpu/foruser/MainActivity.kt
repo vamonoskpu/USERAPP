@@ -3,6 +3,8 @@ package kc.ac.kpu.foruser
 
 import android.os.Bundle
 import android.support.wearable.activity.WearableActivity
+import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
@@ -13,7 +15,7 @@ class MainActivity : WearableActivity() {
     var result: TextView? = null
     val database: FirebaseDatabase? = null
     val databaseReference: DatabaseReference? = null
-
+    var goback = findViewById<View>(R.id.back_btn) as ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +25,7 @@ class MainActivity : WearableActivity() {
 
         FirebaseApp.initializeApp(this)
         val database = FirebaseDatabase.getInstance()
-        val myRef : DatabaseReference = database.getReference("message")
+        val myRef: DatabaseReference = database.getReference("message")
         var tv = findViewById(R.id.examtext) as TextView
 
         myRef.addValueEventListener(object : ValueEventListener {
@@ -35,17 +37,19 @@ class MainActivity : WearableActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 val option = dataSnapshot.exists()
-                if(option==true) {
+                if (option == true) {
                     val value = dataSnapshot.children.elementAt(0).value
 
                     tv.text = "$value"
-                }
-                else {
+                } else {
                     tv.text = "메세지 전송 중입니다."
                 }
 
             }
         })
+    }
+    fun Order(v: View?) {
+        finish()
     }
 
 
