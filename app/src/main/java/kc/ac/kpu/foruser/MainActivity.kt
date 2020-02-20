@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,30 +22,57 @@ import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
+    private var frame : FrameLayout? = null;
+
     var result: TextView? = null
     val database: FirebaseDatabase? = null
     val databaseReference: DatabaseReference? = null
 
 
+    private val monNavigationItemSelectedListener = object  : BottomNavigationView.OnNavigationItemSelectedListener{
+
+        override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+            when(p0.itemId){
+                R.id.action_home -> {
+                    var main = Main.Companion.newInstance()
+                    addFrag(main)
+
+                    return true
+
+
+                }
+                R.id.action_account -> {
+                    val my = MY()
+                    addFrag(my)
+                    return true
+                }
+            }
+            return false
+        }
+    }
+
+    private fun addFrag(fragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.frame,fragment).commit()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        progress_bar.visibility = View.VISIBLE
 
-        // Bottom Navigation View
-        bottom_navigation.setOnNavigationItemSelectedListener(this)
-        bottom_navigation.selectedItemId = R.id.action_home
+        frame = findViewById(R.id.frame) as FrameLayout
+        val navigationView = findViewById(R.id.bottom_navigation) as BottomNavigationView
+        navigationView.setOnNavigationItemSelectedListener (monNavigationItemSelectedListener )
+
+        val fragment = Main.Companion.newInstance()
+        addFrag(fragment)
 
 
-        wow.setOnClickListener{
-            val nextIntent = Intent(this, ProfileActivity::class.java)
-            startActivity(nextIntent)
-        }
+
 
         val database : FirebaseDatabase = FirebaseDatabase.getInstance()
 val myRef : DatabaseReference = database.getReference("message")
-var tv = findViewById(R.id.examtext) as TextView
+//var tv = findViewById(R.id.examtext) as TextView
 
 myRef.addValueEventListener(object : ValueEventListener {
     override fun onCancelled(p0: DatabaseError) {
@@ -51,17 +81,13 @@ myRef.addValueEventListener(object : ValueEventListener {
 
 
     override fun onDataChange(dataSnapshot: DataSnapshot) {
-        val option = dataSnapshot.exists()
-        if (option == true) {
-            val value = dataSnapshot.children.elementAt(0).value
 
-            tv.text = "$value"
-            //나중에 저장해서 워치로 보내려면 임시로 저장해야함
-            //   string = tv.text as String?
+        /*
+                val value = dataSnapshot?.value
+                tv.text = "$value"
 
-        } else {
-            tv.text = "메세지 전송 중입니다."
-        }
+
+ */
 
     }
 
