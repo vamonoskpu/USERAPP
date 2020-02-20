@@ -20,4 +20,6 @@ public class OrderActivity extends WearableActivity {
         // Enables Always-on
         setAmbientEnabled();
     }
+
+
 }
