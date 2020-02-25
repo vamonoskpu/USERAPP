@@ -25,4 +25,8 @@ class Main: Fragment() {
         var view = inflater!!.inflate(R.layout.main,container,false)
         return view;
     }
+
+
+
+
 }
