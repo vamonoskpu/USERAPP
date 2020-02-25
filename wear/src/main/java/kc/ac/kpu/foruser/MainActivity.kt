@@ -4,18 +4,19 @@ package kc.ac.kpu.foruser
 import android.os.Bundle
 import android.support.wearable.activity.WearableActivity
 import android.view.View
-import android.widget.ImageButton
+import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
 import kc.ac.kpu.wear.R
+import kotlinx.android.synthetic.main.activity_menu.*
 
 
 class MainActivity : WearableActivity() {
     var result: TextView? = null
     val database: FirebaseDatabase? = null
     val databaseReference: DatabaseReference? = null
-    var goback = findViewById<View>(R.id.back_btn) as ImageButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +34,6 @@ class MainActivity : WearableActivity() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 val option = dataSnapshot.exists()
@@ -45,12 +45,12 @@ class MainActivity : WearableActivity() {
                     tv.text = "메세지 전송 중입니다."
                 }
 
+
             }
         })
-    }
-    fun Order(v: View?) {
-        finish()
-    }
 
 
+
+    }
 }
+

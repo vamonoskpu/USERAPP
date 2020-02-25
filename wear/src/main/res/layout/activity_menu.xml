@@ -10,57 +10,61 @@
 
 
     <Button
-        android:id="@+id/ordercheck_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:onClick="Ordercheck"
-        android:text="주문 확인"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
-
-    <Button
         android:id="@+id/order_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="Order"
         android:text="주문 하기"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.212" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="129dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="32dp"
-        android:src="@drawable/money"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/order_btn"
-        app:layout_constraintVertical_bias="0.323" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="114dp"
-        android:layout_height="108dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/card"
+    <Button
+        android:id="@+id/ordercheck_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="주문 확인"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order_btn"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.052" />
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ordercheck_btn">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="75dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="104dp"
+            android:src="@drawable/money" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="66dp"
+            android:layout_height="61dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="180dp"
+            android:scaleType="center"
+            android:src="@drawable/card"
+
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

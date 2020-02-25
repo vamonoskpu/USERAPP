@@ -7,18 +7,4 @@
     android:background="@color/dark_grey"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context="kc.ac.kpu.foruser.OrderActivity"
-    tools:deviceIds="wear">
-
-
-    <ImageButton
-        android:id="@+id/back_btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Gotoback"
-        android:src="@android:drawable/ic_menu_revert"
-        app:layout_constraintBottom_toTopOf="@+id/examtext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:deviceIds="wear"/>
