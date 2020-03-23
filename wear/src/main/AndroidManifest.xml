@@ -25,7 +25,25 @@
             android:value="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="kc.ac.kpu.foruser.MenuActivity"
+            android:label="@string/title_activity_menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="kc.ac.kpu.foruser.OrderActivity"
+            android:label="@string/title_activity_order">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name="kc.ac.kpu.foruser.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

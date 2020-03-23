@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
+import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_order.*
 
@@ -33,23 +34,17 @@ class Order: AppCompatActivity() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 val option = dataSnapshot.exists()
                 if(option==true) {
                     val value = dataSnapshot.children.elementAt(0).value
-
                     tv.text = "$value"
                 }
                 else {
                     tv.text = "메세지 전송 중입니다."
                 }
-
-
             }
-
-
         })
     }
 }

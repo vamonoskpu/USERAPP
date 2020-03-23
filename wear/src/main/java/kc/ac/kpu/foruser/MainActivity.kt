@@ -1,11 +1,15 @@
-package kc.ac.kpu.wear
+package kc.ac.kpu.foruser
 
 
 import android.os.Bundle
 import android.support.wearable.activity.WearableActivity
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
+import kc.ac.kpu.wear.R
+import kotlinx.android.synthetic.main.activity_menu.*
 
 
 class MainActivity : WearableActivity() {
@@ -22,7 +26,7 @@ class MainActivity : WearableActivity() {
 
         FirebaseApp.initializeApp(this)
         val database = FirebaseDatabase.getInstance()
-        val myRef : DatabaseReference = database.getReference("message")
+        val myRef: DatabaseReference = database.getReference("message")
         var tv = findViewById(R.id.examtext) as TextView
 
         myRef.addValueEventListener(object : ValueEventListener {
@@ -30,22 +34,23 @@ class MainActivity : WearableActivity() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
                 val option = dataSnapshot.exists()
-                if(option==true) {
+                if (option == true) {
                     val value = dataSnapshot.children.elementAt(0).value
 
                     tv.text = "$value"
-                }
-                else {
+                } else {
                     tv.text = "메세지 전송 중입니다."
                 }
 
+
             }
         })
+
+
+
     }
-
-
 }
+
