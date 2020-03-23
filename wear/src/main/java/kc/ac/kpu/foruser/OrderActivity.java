@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.widget.TextView;
 
-import kc.ac.kpu.wear.R;
-
 public class OrderActivity extends WearableActivity {
 
     private TextView mTextView;

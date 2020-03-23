@@ -5,7 +5,7 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "kc.ac.kpu.foruser"
@@ -34,5 +34,7 @@ dependencies {
     implementation 'com.android.support:wear:29.0.0'
     compileOnly 'com.google.android.wearable:wearable:2.5.0'
     implementation 'com.google.firebase:firebase-database:19.2.1'
+    implementation 'com.google.android.gms:play-services-wearable:17.0.0'
+    implementation 'com.google.android.support:wearable:2.5.0'
 
 }
