@@ -57,7 +57,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonLogout.setOnClickListener(this);
         textivewDelete.setOnClickListener(this);
 
-
     }
 
     @Override
