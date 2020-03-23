@@ -28,6 +28,15 @@ class Main: Fragment() {
     ): View? {
         var view = inflater!!.inflate(R.layout.main,container,false)
 
+        var button6 = view.findViewById<Button>(R.id.button6);
+
+        button6.setOnClickListener(View.OnClickListener { v ->
+            startActivity(Intent(v.context,QuestionList::class.java))
+        })
+
+
+        return view;
+
         var button = view.findViewById<Button>(R.id.button1)
 
         button.setOnClickListener(View.OnClickListener { v ->
@@ -41,6 +50,7 @@ class Main: Fragment() {
 
         })
         return view
+
     }
 
 }

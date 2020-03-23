@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/watch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Answerquestion"></activity>
+        <activity android:name=".QuestionList"></activity>
+        <activity android:name=".Question"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
