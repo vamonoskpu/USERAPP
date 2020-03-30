@@ -12,7 +12,7 @@ public class Users {
 
     }
 
-    public Users(String title,String writer,String answer,String contents,String answercontents){
+    public Users(String title, String writer, String answer, String contents, String answercontents){
 
         this.title = title;
         this.writer =writer;

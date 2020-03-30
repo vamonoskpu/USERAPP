@@ -22,6 +22,7 @@ public class Answerquestion extends AppCompatActivity {
     String existinganswercontents; //답변내용
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

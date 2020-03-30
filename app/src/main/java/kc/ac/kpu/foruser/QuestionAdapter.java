@@ -25,14 +25,14 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
     @NonNull
     @Override
-    public QuestionAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.question_item,parent,false);
 
 
-        QuestionAdapter.ViewHolder vh = new QuestionAdapter.ViewHolder(view);
+        ViewHolder vh = new ViewHolder(view);
         //뷰홀더로 감쌈
 
 
@@ -40,7 +40,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuestionAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         QuestionData questionData = mData.get(position);
 

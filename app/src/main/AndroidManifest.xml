@@ -3,6 +3,9 @@
     package="kc.ac.kpu.foruser">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,17 +17,19 @@
         <activity android:name=".Answerquestion"></activity>
         <activity android:name=".QuestionList"></activity>
         <activity android:name=".Question"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MenuListActivity"></activity>
+        <activity android:name=".OrdercheckActivity" />
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".JoinActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Order"
-            android:label="주문"></activity>
     </application>
 
 </manifest>
