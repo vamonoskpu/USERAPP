@@ -15,8 +15,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -28,10 +31,10 @@ public class OrderActivity extends AppCompatActivity {
 
 
     // Intent intent;
-    FirebaseDatabase database;
     TextView result;
     DatabaseReference databaseReference;
-
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
     MediaRecorder recorder;
     String fileName;
@@ -44,7 +47,11 @@ public class OrderActivity extends AppCompatActivity {
 
 
 
+
+
+
     //여기넣으심됩니당
+    TextView textView;
 
 
 
@@ -68,12 +75,34 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
+        //코드도 여기 넣으심 됩니당
 
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("Usermenu");
+        textView = findViewById(R.id.textview);
+
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                MenuData menuData = dataSnapshot.getValue(MenuData.class);
+                textView.setText(menuData.getUsermenu());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+                 //여기까지가 파이어베이스에서 값 가져오는 코드입니다.
+
+
+       if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 1);
-        } //권한 허용
+    } //권한 허용
 
 
 
@@ -125,7 +154,6 @@ public class OrderActivity extends AppCompatActivity {
 
 
 
-            //코드도 여기 넣으심 됩니당
 
 
 
@@ -158,7 +186,7 @@ public class OrderActivity extends AppCompatActivity {
 
 
 
-        }
+    }
 
 
         /**
@@ -190,4 +218,6 @@ public class OrderActivity extends AppCompatActivity {
 
 
     }
+
+
 }
