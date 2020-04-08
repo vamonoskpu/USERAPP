@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,16 +15,16 @@
         android:roundIcon="@mipmap/watch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Answerquestion"></activity>
-        <activity android:name=".QuestionList"></activity>
-        <activity android:name=".Question"></activity>
-        <activity android:name=".MenuListActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Answerquestion" />
+        <activity android:name=".QuestionList" />
+        <activity android:name=".Question" />
+        <activity android:name=".MenuListActivity" />
         <activity android:name=".OrdercheckActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".OrderActivity" />
         <activity android:name=".LoginActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
