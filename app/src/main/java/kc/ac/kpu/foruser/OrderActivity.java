@@ -56,20 +56,6 @@ public class OrderActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +95,7 @@ public class OrderActivity extends AppCompatActivity {
             // SD 카드 폴더 지정
             File file = new File(Environment.getExternalStorageDirectory(), "recorded.wav");
             fileName = file.getAbsolutePath(); // 파일 위치 가져옴
-            Toast.makeText(getApplicationContext(), "파일 위치:" + fileName, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "주문시 녹음시작버튼, 주문끝날 시 녹음중지 버튼을 눌러주세요.", Toast.LENGTH_LONG).show();
 
 
             findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
@@ -147,39 +133,6 @@ public class OrderActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "녹음중지", Toast.LENGTH_SHORT).show();
                 }
             });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
