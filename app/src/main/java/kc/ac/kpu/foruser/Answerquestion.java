@@ -33,7 +33,7 @@ public class Answerquestion extends AppCompatActivity {
         contents = (TextView) findViewById(R.id.contents);
         answercontents = (TextView) findViewById(R.id.answercontents);
         database=  FirebaseDatabase.getInstance(); // Firebase database 연동
-        reference =database.getReference("users");// DB 테이블 연결
+        reference =database.getReference("noticeboard");// DB 테이블 연결
 
         Bundle extras = getIntent().getExtras(); //QuestionList에서 받아온 정보를 가져옴
         if(extras != null){
