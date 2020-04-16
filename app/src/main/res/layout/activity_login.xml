@@ -52,9 +52,9 @@
             android:id="@+id/chk_auto"
             android:layout_width="166dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
             android:text="자동로그인"
-            android:layout_marginLeft="130dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"

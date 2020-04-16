@@ -15,7 +15,14 @@
         android:roundIcon="@mipmap/watch"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Answerquestion" />
         <activity android:name=".QuestionList" />
         <activity android:name=".Question" />
@@ -25,11 +32,7 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".OrderActivity" />
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
