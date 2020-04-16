@@ -1,23 +1,19 @@
 package kc.ac.kpu.foruser;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioFormat;
 import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -35,6 +31,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class OrderActivity extends AppCompatActivity {
 
@@ -44,9 +42,14 @@ public class OrderActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     FirebaseDatabase database;
     DatabaseReference reference;
+    Button completebtn;
 
     MediaRecorder recorder;
     String fileName;
+    ImageView money;
+    ImageView card;
+    ImageView clickmoney;
+    ImageView clickcard;
 
 
     TextView textView;
@@ -84,6 +87,13 @@ public class OrderActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Usermenu");
         textView = findViewById(R.id.textview);
+        card = findViewById(R.id.card);
+        money = findViewById(R.id.money);
+        clickcard= findViewById(R.id.clickcard);
+        clickmoney = findViewById(R.id.clickmoney);
+
+        completebtn = findViewById(R.id.completebtn);
+
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -94,6 +104,54 @@ public class OrderActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        completebtn.setOnClickListener(new View.OnClickListener() {  //주문완료 버튼 터치 시
+            @Override
+            public void onClick(View v) {
+                if (clickmoney.getVisibility() == View.VISIBLE){  //money를 선택했다면
+                    Map<String,Object> update = new HashMap<>();
+                    update.put("payment", R.drawable.money);
+                    reference.updateChildren(update); //Firebase에 돈 이미지 전송
+                    Toast.makeText(getApplicationContext(),"주문완료 되었습니다.",Toast.LENGTH_SHORT).show();
+
+                }else if(clickcard.getVisibility() == View.VISIBLE){  //card를 선택했다면
+                    Map<String,Object> update = new HashMap<>();
+                    update.put("payment", R.drawable.card);
+                    reference.updateChildren(update);      //Firebase에 카드 이미지 전송
+                    Toast.makeText(getApplicationContext(),"주문완료 되었습니다.",Toast.LENGTH_SHORT).show();
+
+                }else{
+                    Toast.makeText(getApplicationContext(),"제대로 선택해주세요..",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        card.setOnClickListener(new View.OnClickListener() { //카드 이미지 터치 시
+            @Override
+            public void onClick(View v) {
+                if(clickcard.getVisibility() == View.VISIBLE){
+                    clickcard.setVisibility(View.INVISIBLE);
+                }else {
+                    clickcard.setVisibility(View.VISIBLE);
+
+                }
+
+
+            }
+        });
+        money.setOnClickListener(new View.OnClickListener() {  //돈 이미지 터치 시
+            @Override
+            public void onClick(View v) {
+                if(clickmoney.getVisibility() == View.VISIBLE){
+                    clickmoney.setVisibility(View.INVISIBLE);
+                }else{
+
+                    clickmoney.setVisibility(View.VISIBLE);
+
+                }
 
             }
         });

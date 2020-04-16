@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -16,6 +18,7 @@ public class OrdercheckActivity extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference reference;
+    ImageView payment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,17 +27,24 @@ public class OrdercheckActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Usermenu");
+
         final TextView usermenu = findViewById(R.id.ordercheckmenu);
         final TextView usercount = findViewById(R.id.ordercheckcount);
+        payment = findViewById(R.id.payment);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String menu = dataSnapshot.child("usermenu").getValue(String.class);
-                String count = dataSnapshot.child("usercount").getValue(String.class);
+                String menu = dataSnapshot.child("usermenu").getValue(String.class); //메뉴
+                String count = dataSnapshot.child("usercount").getValue(String.class); //수량
+                int payment1 = dataSnapshot.child("payment").getValue(int.class);    //결제수단
+
 
                 usermenu.setText(menu);
                 usercount.setText(count);
+                payment.setImageResource(payment1);
+                payment.setVisibility(View.VISIBLE);
+
 
 
             }
