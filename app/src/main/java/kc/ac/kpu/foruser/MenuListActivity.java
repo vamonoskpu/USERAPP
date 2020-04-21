@@ -46,13 +46,13 @@ public class MenuListActivity extends AppCompatActivity {
 
         databaseReference = database.getReference("MenuList"); // DB 테이블 연결
 
-     /*
-       파이어베이스에 사진올리는거
-        Map<String,Object> update = new HashMap<>();
-        update.put("profile",R.drawable.smoothie);
-        databaseReference.child("smoothie").updateChildren(update);
 
-      */
+       //파이어베이스에 사진올리는거
+        Map<String,Object> update = new HashMap<>();
+        update.put("profile",R.drawable.espresso);
+        databaseReference.child("espresso").updateChildren(update);
+
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

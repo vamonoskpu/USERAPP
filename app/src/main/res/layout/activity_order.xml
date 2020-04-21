@@ -65,61 +65,59 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user" />
 
-    <ImageView
-        android:id="@+id/card"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
 
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/money"
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/completebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recordlabel"
-        app:srcCompat="@drawable/card" />
+        app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/card"
+            android:layout_width="103dp"
+            android:layout_height="100dp"
 
-    <ImageView
-        android:id="@+id/clickcard"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="TODO"
-        android:tint="#FC1212"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/money"
-        app:layout_constraintTop_toBottomOf="@+id/recordlabel"
-        app:srcCompat="@drawable/card" />
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/card" />
 
-    <ImageView
-        android:id="@+id/money"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/clickmoney"
-        app:layout_constraintTop_toBottomOf="@+id/recordlabel"
-        app:srcCompat="@drawable/money" />
+        <ImageView
+            android:id="@+id/clickcard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="81dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="TODO"
+            android:tint="#FFFF9800"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/card" />
 
-    <ImageView
-        android:id="@+id/clickmoney"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="88dp"
-        android:contentDescription="TODO"
-        android:tint="#EC0000"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/card"
-        app:layout_constraintTop_toBottomOf="@+id/recordlabel"
-        app:srcCompat="@drawable/clickmoney" />
+        <ImageView
+            android:id="@+id/money"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            app:srcCompat="@drawable/money" />
+
+        <ImageView
+            android:id="@+id/clickmoney"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:contentDescription="TODO"
+            android:tint="#FFFF9800"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/clickmoney" />
+
+    </FrameLayout>
 
     <Button
         android:id="@+id/completebtn"
