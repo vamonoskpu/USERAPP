@@ -16,7 +16,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="118dp">
+        android:layout_height="98dp">
 
         <ImageView
             android:id="@+id/imageView4"
