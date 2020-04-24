@@ -8,39 +8,10 @@
     tools:context=".MenuActivity">
 
 
-    <Button
-        android:id="@+id/logout_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_weight="1"
-        android:text="로그아웃"
-        app:layout_constraintTop_toBottomOf="@+id/questionbtn"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/del_text"
-        android:layout_width="127dp"
-        android:layout_height="33dp"
-        android:layout_margin="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="97dp"
-        android:layout_weight="1"
-        android:text="회원탈퇴 합니다."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logout_btn"
-        app:layout_constraintVertical_bias="0.0" />
-
-
     <ImageView
         android:id="@+id/main"
-        android:layout_width="wrap_content"
-        android:layout_height="62dp"
+        android:layout_width="388dp"
+        android:layout_height="38dp"
         android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
@@ -98,11 +69,12 @@
         app:layout_constraintVertical_bias="0.049" />
 
     <TextView
-        android:id="@+id/textviewUserEmail"
+        android:id="@+id/textviewintroduce"
         android:layout_width="0dp"
         android:layout_height="19dp"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:text="This is Drive Through ordering system"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ordercheckbtn"
         app:layout_constraintEnd_toEndOf="parent"
