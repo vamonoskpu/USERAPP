@@ -47,23 +47,23 @@ public class MenuListActivity extends AppCompatActivity {
         databaseReference = database.getReference("MenuList"); // DB 테이블 연결
 
 
-       //파이어베이스에 사진올리는거
+       /*//파이어베이스에 사진올리는거
         Map<String,Object> update = new HashMap<>();
-        update.put("profile",R.drawable.espresso);
-        databaseReference.child("espresso").updateChildren(update);
-
+        update.put("profile",R.drawable.smoothie);
+        databaseReference.child("smoothie").updateChildren(update);
+*/
 
         databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
-                arrayList.clear(); // 기존 배열리스트가 존재하지않게 초기화
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) { // 반복문으로 데이터 List를 추출해냄
-                    MenuItem menu = snapshot.getValue(MenuItem.class); // 만들어뒀던 MenuItem 객체에 데이터를 담는다.
-                    arrayList.add(menu); // 담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
+                    arrayList.clear(); // 기존 배열리스트가 존재하지않게 초기화
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) { // 반복문으로 데이터 List를 추출해냄
+                        MenuItem menu = snapshot.getValue(MenuItem.class); // 만들어뒀던 MenuItem 객체에 데이터를 담는다.
+                        arrayList.add(menu); // 담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
+                    }
+                    adapter.notifyDataSetChanged(); // 리스트 저장 및 새로고침
                 }
-                adapter.notifyDataSetChanged(); // 리스트 저장 및 새로고침
-            }
 
 
             @Override

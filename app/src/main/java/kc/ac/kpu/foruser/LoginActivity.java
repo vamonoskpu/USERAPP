@@ -47,6 +47,16 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         if (setting.getBoolean("chk_auto", false)) {
             email_login.setText(setting.getString("ID", ""));
             pwd_login.setText(setting.getString("PW", ""));
@@ -78,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 }
                             });
+
 
                 } else {
                     editor.clear();
