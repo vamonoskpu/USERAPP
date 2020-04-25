@@ -23,11 +23,11 @@
 
             <TextView
                 android:id="@+id/tv_menuname"
-                android:layout_width="wrap_content"
+                android:layout_width="224dp"
                 android:layout_height="wrap_content"
-                android:text="메뉴"
                 android:layout_margin="5dp"
-                android:textSize="20dp"/>
+                android:text="메뉴"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/tv_price"

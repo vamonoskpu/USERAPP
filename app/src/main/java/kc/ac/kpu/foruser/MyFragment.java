@@ -56,7 +56,7 @@ public class MyFragment extends Fragment {
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        textViewUserEmail.setText("아이디:" + user.getEmail());
+        textViewUserEmail.setText("ID: " + user.getEmail());
 
 
         buttonLogout.setOnClickListener(new View.OnClickListener() {

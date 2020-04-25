@@ -85,7 +85,7 @@
 
             android:layout_marginLeft="80dp"
             android:layout_marginTop="40dp"
-            app:srcCompat="@drawable/cardd" />
+            app:srcCompat="@drawable/card" />
 
         <ImageView
             android:id="@+id/clickcard"
@@ -96,26 +96,26 @@
             android:contentDescription="TODO"
             android:tint="#FFFF9800"
             android:visibility="invisible"
-            app:srcCompat="@drawable/clickcardd" />
+            app:srcCompat="@drawable/card" />
 
         <ImageView
             android:id="@+id/money"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="240dp"
+            android:layout_marginLeft="210dp"
             android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/cashh" />
+            app:srcCompat="@drawable/money" />
 
         <ImageView
             android:id="@+id/clickmoney"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="240dp"
+            android:layout_marginLeft="210dp"
             android:layout_marginTop="50dp"
             android:contentDescription="TODO"
             android:tint="#FFFF9800"
             android:visibility="invisible"
-            app:srcCompat="@drawable/clickcashh" />
+            app:srcCompat="@drawable/money" />
 
     </FrameLayout>
 
