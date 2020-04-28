@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/menulist"
         app:layout_constraintTop_toBottomOf="@+id/ordercheckbtn"
-        app:layout_constraintVertical_bias="0.045" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/menulist"
