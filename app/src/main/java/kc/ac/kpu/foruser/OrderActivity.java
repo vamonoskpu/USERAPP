@@ -89,6 +89,8 @@ public class OrderActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Usermenu");
+
+
         textView = findViewById(R.id.textview);
         card = findViewById(R.id.card);
         money = findViewById(R.id.money);
@@ -126,13 +128,13 @@ public class OrderActivity extends AppCompatActivity {
                 if (clickmoney.getVisibility() == View.VISIBLE) {  //money를 선택했다면
                     Map<String, Object> update = new HashMap<>();
                     update.put("payment", R.drawable.money);
-                    reference.updateChildren(update); //Firebase에 돈 이미지 전송
+                    mdatabase.updateChildren(update); //Firebase에 돈 이미지 전송
                     Toast.makeText(getApplicationContext(), "주문완료 되었습니다.", Toast.LENGTH_SHORT).show();
 
                 } else if (clickcard.getVisibility() == View.VISIBLE) {  //card를 선택했다면
                     Map<String, Object> update = new HashMap<>();
                     update.put("payment", R.drawable.card);
-                    reference.updateChildren(update);      //Firebase에 카드 이미지 전송
+                    mdatabase.updateChildren(update);      //Firebase에 카드 이미지 전송
                     Toast.makeText(getApplicationContext(), "주문완료 되었습니다.", Toast.LENGTH_SHORT).show();
 
                 } else {

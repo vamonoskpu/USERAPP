@@ -27,7 +27,7 @@ public class OrdercheckActivity extends AppCompatActivity {
 
 
         database = FirebaseDatabase.getInstance();
-        reference = database.getReference("Usermenu");
+        reference = database.getReference();
         reference1 = database.getReference("Menucount");
         final TextView text1 = findViewById(R.id.americano);
         final TextView text2 = findViewById(R.id.cafelatte);

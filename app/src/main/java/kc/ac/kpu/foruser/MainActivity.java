@@ -38,17 +38,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         context = getApplicationContext();
         database=  FirebaseDatabase.getInstance(); // Firebase database 연동
-        reference =database.getReference().child("Usermenu");// DB 테이블 연결
+        reference =database.getReference();// DB 테이블 연결
+
 
 
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String menuname = dataSnapshot.child("usermenu").getValue(String.class);
+               // String menuname = dataSnapshot.child("usermenu").getValue(String.class);
                 String  ordercheck= dataSnapshot.child("ordercheck").getValue(String.class);
                 if(ordercheck.equals("준비 완료")){         //관리자앱에서 준비완료 버튼 클릭 시
-                    createNotification(menuname,context); //노티피게이션 생성
+                    createNotification(context); //노티피게이션 생성
                 }else{
 
                 }
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-    private void createNotification(String menuname,Context context){ //Notification 생성
+    private void createNotification(Context context){ //Notification 생성
 
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setAutoCancel(true);
 
         builder.setSmallIcon(R.mipmap.ic_launcher);
-        builder.setContentTitle(menuname+" 준비됐습니다.");
+        builder.setContentTitle(" 준비됐습니다.");
         builder.setContentText("가져가주세요~~^^");
         builder.setContentInfo("INFO");
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
