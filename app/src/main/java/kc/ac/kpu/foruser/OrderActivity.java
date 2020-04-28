@@ -170,12 +170,15 @@ public class OrderActivity extends AppCompatActivity {
 
 
 
+
         //여기까지가 파이어베이스에서 값 가져오는 코드입니다.
 
 
         mrecordBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+
+
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     startRecording();
@@ -243,7 +246,12 @@ public class OrderActivity extends AppCompatActivity {
 
         StorageReference filepath = mStorage.child("/learning/").child(labelNumber + "_" + recordNumber + ".wav");
 
-        mdatabase.child("recordnumber").setValue(recordNumber);
+       // recordNumber = recordNumber+1;
+        //DatabaseReference reference2 =  mdatabase.push();
+       // reference2.getKey().
+       // mdatabase.push().child("recordnumber").setValue(recordNumber);
+       // String key = mdatabase.push().getKey();
+        //mdatabase.child(key).child("recordnumber").setValue(recordNumber);
 
         Uri uri = Uri.fromFile(new File(fileName));
 

@@ -7,6 +7,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -28,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction ft;
     FirebaseDatabase database;
     DatabaseReference reference;
+    Context context;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = getApplicationContext();
         database=  FirebaseDatabase.getInstance(); // Firebase database 연동
         reference =database.getReference().child("Usermenu");// DB 테이블 연결
 
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 String menuname = dataSnapshot.child("usermenu").getValue(String.class);
                 String  ordercheck= dataSnapshot.child("ordercheck").getValue(String.class);
                 if(ordercheck.equals("준비 완료")){         //관리자앱에서 준비완료 버튼 클릭 시
-                    createNotification(menuname); //노티피게이션 생성
+                    createNotification(menuname,context); //노티피게이션 생성
                 }else{
 
                 }
@@ -97,11 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-    private void createNotification(String menuname){ //Notification 생성
+    private void createNotification(String menuname,Context context){ //Notification 생성
 
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
-
 
 
         // 알림 표시
@@ -123,6 +125,12 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setDefaults(Notification.DEFAULT_VIBRATE);//진동으로 알림
 
+        //화면이 꺼져있는 상태에서도 Notification
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK  |
+                PowerManager.ACQUIRE_CAUSES_WAKEUP |
+                PowerManager.ON_AFTER_RELEASE, "My:Tag");
+        wakeLock.acquire(5000);
 
 
 
