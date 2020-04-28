@@ -142,14 +142,16 @@ public class OrderActivity extends AppCompatActivity {
                 if (clickmoney.getVisibility() == View.VISIBLE) {  //money를 선택했다면
                     Map<String, Object> update = new HashMap<>();
                     update.put("payment", R.drawable.money);
-                    mdatabase.updateChildren(update); //Firebase에 돈 이미지 전송
+                    mdatabase.updateChildren(update);
+                    finish();//Firebase에 돈 이미지 전송
                     Toast.makeText(getApplicationContext(), "주문완료 되었습니다.", Toast.LENGTH_SHORT).show();
                     finish();
 
                 } else if (clickcard.getVisibility() == View.VISIBLE) {  //card를 선택했다면
                     Map<String, Object> update = new HashMap<>();
                     update.put("payment", R.drawable.card);
-                    mdatabase.updateChildren(update);      //Firebase에 카드 이미지 전송
+                    mdatabase.updateChildren(update);
+                    finish();//Firebase에 카드 이미지 전송
                     Toast.makeText(getApplicationContext(), "주문완료 되었습니다.", Toast.LENGTH_SHORT).show();
                     finish();
 
