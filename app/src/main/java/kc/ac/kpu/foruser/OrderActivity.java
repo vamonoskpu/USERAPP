@@ -69,7 +69,7 @@ public class OrderActivity extends AppCompatActivity {
     private static final String LOG_TAG = "Record_log";
     private StorageReference mStorage;
     private ProgressDialog mProgress;
-    private int recordNumber = 0;
+    public int recordNumber = 0;
     private int labelNumber;
     private DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference();
     private FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -233,9 +233,9 @@ public class OrderActivity extends AppCompatActivity {
                 .getReference().child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
-                FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
 
+             //   FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
+               // FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
 
             }
 
@@ -245,7 +245,6 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
 
-
         FirebaseDatabase.getInstance().getReference().child(uid).child("recordNumber").setValue(recordNumber);
         recordNumber += 1;
         labelNumber = recordNumber / 10;
@@ -254,7 +253,7 @@ public class OrderActivity extends AppCompatActivity {
         }
 
 
-        FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
+        FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("true");
         FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
         StorageReference filepath = mStorage.child("/learning/").child(labelNumber + "_" + recordNumber + ".wav");
 
