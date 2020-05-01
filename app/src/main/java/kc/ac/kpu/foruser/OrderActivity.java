@@ -233,9 +233,6 @@ public class OrderActivity extends AppCompatActivity {
                 .getReference().child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
-                FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
-
 
             }
 
@@ -254,7 +251,7 @@ public class OrderActivity extends AppCompatActivity {
         }
 
 
-        FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
+        FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("true");
         FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
         StorageReference filepath = mStorage.child("/learning/").child(labelNumber + "_" + recordNumber + ".wav");
 
