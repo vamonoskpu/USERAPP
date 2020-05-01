@@ -22,6 +22,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -64,7 +65,7 @@ public class OrderActivity extends AppCompatActivity {
 
     private MediaRecorder recorder;
     private String fileName = null;
-
+    private String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
     private static final String LOG_TAG = "Record_log";
     private StorageReference mStorage;
     private ProgressDialog mProgress;
@@ -215,6 +216,8 @@ public class OrderActivity extends AppCompatActivity {
 
     private void stopRecording() {
         recorder.stop();
+
+
         recorder.release();
         recorder = null;
 
@@ -227,33 +230,35 @@ public class OrderActivity extends AppCompatActivity {
         mProgress.show();
 
         FirebaseDatabase.getInstance()
-                .getReference()
-                .child("recordNumber")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        recordNumber += 1;
-                        labelNumber = recordNumber / 10;
-                        if (recordNumber % 10 == 7) {
-                            labelNumber += 1;
-                        }
+                .getReference().child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
+                FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
 
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
 
-                    }
-                });
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+
+        FirebaseDatabase.getInstance().getReference().child(uid).child("recordNumber").setValue(recordNumber);
+        recordNumber += 1;
+        labelNumber = recordNumber / 10;
+        if (recordNumber % 10 == 7) {
+            labelNumber += 1;
+        }
+
+
+        FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
+        FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
         StorageReference filepath = mStorage.child("/learning/").child(labelNumber + "_" + recordNumber + ".wav");
 
-       // recordNumber = recordNumber+1;
-        //DatabaseReference reference2 =  mdatabase.push();
-       // reference2.getKey().
-       // mdatabase.push().child("recordnumber").setValue(recordNumber);
-       // String key = mdatabase.push().getKey();
-        //mdatabase.child(key).child("recordnumber").setValue(recordNumber);
+
 
         Uri uri = Uri.fromFile(new File(fileName));
 
@@ -266,6 +271,5 @@ public class OrderActivity extends AppCompatActivity {
         });
     }
 }
-
 
 
