@@ -186,7 +186,6 @@ public class OrderActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
 
 
-
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     startRecording();
                     mRecordLabel.setText("메뉴이름을 말씀해주세요.");
@@ -202,6 +201,7 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void startRecording() {
+
         recorder = new MediaRecorder();
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC); // 오디오 입력 지정(마이크)
         recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4); // 출력 형식 지정
@@ -237,8 +237,6 @@ public class OrderActivity extends AppCompatActivity {
                 .getReference().child(uid).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
-                FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
 
 
             }

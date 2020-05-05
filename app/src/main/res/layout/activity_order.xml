@@ -39,15 +39,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recordbtn" />
 
+    <!--@android:drawable/dialog_holo_light_frame-->
     <Button
         android:id="@+id/recordbtn"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="12dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
+
+        android:background="@drawable/button_design3"
         android:backgroundTint="@color/colorGoogleSignInPressed"
         android:text="주문시 꾹 눌러주세요"
         android:textSize="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,8 +126,12 @@
     <Button
         android:id="@+id/completebtn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/button_design3"
+        android:backgroundTint="@color/colorGoogleSignInPressed"
         android:text="주문 완료"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="230dp" />

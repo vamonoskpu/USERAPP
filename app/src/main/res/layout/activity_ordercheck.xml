@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="주문 확인"
+            android:textColor="#0C0C0C"
             android:layout_marginBottom="30dp"
             android:textSize="30dp"
             android:layout_gravity="center"
@@ -34,6 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:textSize="25dp"
+                android:textColor="#0C0C0C"
                 android:gravity="center"
                 android:text="메뉴">
 
@@ -42,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
+                android:textColor="#0C0C0C"
                 android:textSize="25dp"
                 android:gravity="center"
                 android:text="수량"></TextView>
@@ -58,7 +61,7 @@
 
             <TextView
                 android:layout_width="67dp"
-
+                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
@@ -71,6 +74,7 @@
             <TextView
                 android:id="@+id/americano"
                 android:layout_width="wrap_content"
+                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
@@ -85,12 +89,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
-
+                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
@@ -104,6 +109,7 @@
                 android:id="@+id/cafelatte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#0C0C0C"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -117,6 +123,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#0C0C0C"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
@@ -126,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:textColor="#0C0C0C"
                 android:gravity="center"
                 android:text="카페모카"
                 android:textSize="20dp">
@@ -137,6 +145,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textColor="#0C0C0C"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -153,6 +162,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textColor="#0C0C0C"
                 android:layout_width="72dp"
 
                 android:layout_height="wrap_content"
@@ -167,6 +177,7 @@
             <TextView
                 android:id="@+id/caramelmacchiato"
                 android:layout_width="wrap_content"
+                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
@@ -187,6 +198,7 @@
             <TextView
                 android:id="@+id/weight"
                 android:layout_width="67dp"
+                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
@@ -201,6 +213,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textColor="#0C0C0C"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -221,6 +234,7 @@
 
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textColor="#0C0C0C"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="프라푸치노"
@@ -233,6 +247,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textColor="#0C0C0C"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -253,6 +268,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:textColor="#0C0C0C"
                 android:gravity="center"
                 android:text="핫초코"
                 android:textSize="20dp">
@@ -264,6 +280,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textColor="#0C0C0C"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -279,11 +296,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
+
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="53dp"
-
+                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
@@ -297,6 +315,7 @@
                 android:id="@+id/smoothie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#0C0C0C"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -309,6 +328,7 @@
         <TextView
           android:layout_marginTop="20dp"
           android:textSize="20dp"
+            android:textColor="#0C0C0C"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="결제 수단"
