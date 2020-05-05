@@ -131,12 +131,14 @@ public class OrderActivity extends AppCompatActivity {
                     update.put("payment", R.drawable.money);
                     mdatabase.updateChildren(update); //Firebase에 돈 이미지 전송
                     Toast.makeText(getApplicationContext(), "주문완료 되었습니다.", Toast.LENGTH_SHORT).show();
+                    finish();
 
                 } else if (clickcard.getVisibility() == View.VISIBLE) {  //card를 선택했다면
                     Map<String, Object> update = new HashMap<>();
                     update.put("payment", R.drawable.card);
                     mdatabase.updateChildren(update);      //Firebase에 카드 이미지 전송
                     Toast.makeText(getApplicationContext(), "주문완료 되었습니다.", Toast.LENGTH_SHORT).show();
+                    finish();
 
                 } else {
                     Toast.makeText(getApplicationContext(), "제대로 선택해주세요..", Toast.LENGTH_SHORT).show();
@@ -147,21 +149,23 @@ public class OrderActivity extends AppCompatActivity {
         card.setOnClickListener(new View.OnClickListener() { //카드 이미지 터치 시
             @Override
             public void onClick(View v) {
+                clickmoney.setVisibility(View.INVISIBLE);
                 if (clickcard.getVisibility() == View.VISIBLE) {
                     clickcard.setVisibility(View.INVISIBLE);
+
                 } else {
                     clickcard.setVisibility(View.VISIBLE);
-
                 }
-
 
             }
         });
         money.setOnClickListener(new View.OnClickListener() {  //돈 이미지 터치 시
             @Override
             public void onClick(View v) {
+                clickcard.setVisibility(View.INVISIBLE);
                 if (clickmoney.getVisibility() == View.VISIBLE) {
                     clickmoney.setVisibility(View.INVISIBLE);
+
                 } else {
 
                     clickmoney.setVisibility(View.VISIBLE);
