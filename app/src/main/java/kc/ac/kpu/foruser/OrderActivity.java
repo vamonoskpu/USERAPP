@@ -10,6 +10,7 @@ import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -72,6 +73,7 @@ public class OrderActivity extends AppCompatActivity {
     private FirebaseStorage storage = FirebaseStorage.getInstance();
 
 
+    Handler handler;
     //음성새로수정
     private static final int RECORDER_BPP = 16;
     private static final String AUDIO_RECORDER_FILE_EXT_WAV = ".wav";
@@ -198,11 +200,24 @@ public class OrderActivity extends AppCompatActivity {
                     isRecording = true;
                     startRecording();
                     mRecordLabel.setText("메뉴이름을 말씀해주세요.");
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    isRecording = false;
-                    stopRecording();
-                    mRecordLabel.setText("주문 완료");
-                }
+                   handler=new Handler();
+                    Runnable r=new Runnable()
+                    {
+                        public void run()
+                        {
+                            isRecording = false;
+                            stopRecording();
+                            mRecordLabel.setText("주문 완료");
+                        }
+
+                    };
+                    handler.postDelayed(r, 4000); //4초 동안만 녹음
+                }// else if (event.getAction() == MotionEvent.ACTION_UP) {
+
+
+
+
+             //   }
                 return false;
             }
         });
