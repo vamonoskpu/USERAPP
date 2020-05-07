@@ -335,7 +335,7 @@ public class OrderActivity extends AppCompatActivity {
         long totalAudioLen = 0;
         long totalDataLen = totalAudioLen + 36;
         long longSampleRate = RECORDER_SAMPLERATE;
-        int channels = 2;
+        int channels = 1;
         long byteRate = RECORDER_BPP * RECORDER_SAMPLERATE * channels / 8;
         byte[] data = new byte[bufferSize];
 
@@ -445,6 +445,7 @@ public class OrderActivity extends AppCompatActivity {
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                 mProgress.dismiss();
                 mRecordLabel.setText("주문접수완료! 결제수단을 선택해주세요:)");
+
             }
         });
     }
