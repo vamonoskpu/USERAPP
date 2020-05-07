@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kc.ac.kpu.foruser">
+    package="kc.ac.kpu.wear">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-feature android:name="android.hardware.type.watch" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,8 +25,8 @@
             android:value="true" />
 
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2">
+            android:name="kc.ac.kpu.foruser.MenuActivity"
+            android:label="@string/title_activity_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,13 +34,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".wearMenuActivity"
-            android:label="@string/title_activity_wear_menu"></activity>
+            android:name="kc.ac.kpu.foruser.OrderActivity"
+            android:label="@string/title_activity_order">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".wearOrderActivity"
-            android:label="@string/title_activity_wear_order"></activity>
-        <activity
-            android:name=".MainActivity"
+            android:name="kc.ac.kpu.foruser.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

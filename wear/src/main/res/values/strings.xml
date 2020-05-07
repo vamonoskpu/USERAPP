@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">foruser</string>
+    <string name="app_name">forusertest</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string name="title_activity_wear_order">wearOrderActivity</string>
-    <string name="title_activity_wear_menu">wearMenuActivity</string>
-    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_order">order</string>
+    <string name="title_activity_menu">MenuActivity</string>
 </resources>
