@@ -135,6 +135,7 @@ public class OrderActivity extends AppCompatActivity {
             }
         });
 
+
         completebtn.setOnClickListener(new View.OnClickListener() {  //주문완료 버튼 터치 시
             @Override
             public void onClick(View v) {
@@ -171,6 +172,7 @@ public class OrderActivity extends AppCompatActivity {
 
             }
         });
+
         money.setOnClickListener(new View.OnClickListener() {  //돈 이미지 터치 시
             @Override
             public void onClick(View v) {

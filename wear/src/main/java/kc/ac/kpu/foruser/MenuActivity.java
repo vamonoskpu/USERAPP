@@ -23,17 +23,26 @@ public class MenuActivity extends WearableActivity {
         setAmbientEnabled();
 
         mTextView = (TextView) findViewById(R.id.text);
-        Button btn = (Button)findViewById(R.id.order_btn);
+        Button btn = (Button) findViewById(R.id.order_btn);
+        Button btn1 = (Button) findViewById(R.id.ordercheck_btn);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
-        }
+            }
 
-});
+        });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),OrderActivity.class);
+                startActivity(intent);
+            }
+        });
 }
 
 
