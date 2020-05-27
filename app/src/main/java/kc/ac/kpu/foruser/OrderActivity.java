@@ -118,9 +118,9 @@ public class OrderActivity extends AppCompatActivity {
         mrecordBtn = findViewById(R.id.recordbtn);
         mProgress = new ProgressDialog(this);
 
+        FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("false");
 
         bufferSize = AudioRecord.getMinBufferSize(8000, AudioFormat.CHANNEL_CONFIGURATION_MONO, AudioFormat.ENCODING_PCM_16BIT);
-
 
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -433,16 +433,18 @@ public class OrderActivity extends AppCompatActivity {
 
 
         FirebaseDatabase.getInstance().getReference().child(uid).child("learning").setValue("false");
-        FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
+    //    FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
         FirebaseDatabase.getInstance().getReference().child(uid).child("feedback").setValue(labelNumber + "_" + (recordNumber-1) );
         FirebaseDatabase.getInstance().getReference().child(uid).child("result").setValue(" ");
-        StorageReference filepath = mStorage.child("/learning/").child(labelNumber + "_" + recordNumber + ".wav");
+     //   StorageReference filepath = mStorage.child("learning").child(labelNumber + "_" + recordNumber + ".wav");
+        StorageReference filepath = mStorage.child("learning").child("using.wav");
 
 
         Uri uri = Uri.fromFile(new File(getFilename()));
         filepath.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("true");
                 mProgress.dismiss();
                 mRecordLabel.setText("주문접수완료! 결제수단을 선택해주세요:)");
 
