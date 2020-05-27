@@ -450,6 +450,8 @@ public class OrderActivity extends AppCompatActivity {
 
             }
         });
+        FirebaseDatabase.getInstance().getReference().child(uid).child("using").setValue("false");
+
     }
 }
 
