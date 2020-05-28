@@ -4,50 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
     tools:context=".OrdercheckActivity">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
             android:text="주문 확인"
             android:textColor="#0C0C0C"
-            android:layout_marginBottom="30dp"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"></TextView>
+            android:textSize="25dp"></TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:orientation="horizontal"
-            >
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:textSize="25dp"
-                android:textColor="#0C0C0C"
                 android:gravity="center"
-                android:text="메뉴">
+                android:text="메뉴"
+                android:textColor="#0C0C0C"
+                android:textSize="20dp">
 
             </TextView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:textColor="#0C0C0C"
-                android:textSize="25dp"
                 android:gravity="center"
-                android:text="수량"></TextView>
+                android:text="수량"
+                android:textColor="#0C0C0C"
+                android:textSize="20dp"></TextView>
 
 
         </LinearLayout>
@@ -55,15 +59,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="67dp"
-                android:textColor="#0C0C0C"
+
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="아메리카노"
@@ -74,9 +78,8 @@
             <TextView
                 android:id="@+id/americano"
                 android:layout_width="wrap_content"
-                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -89,15 +92,46 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:textColor="#0C0C0C"
+
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="카페모카"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/cafemocha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="카페라떼"
@@ -109,8 +143,7 @@
                 android:id="@+id/cafelatte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#0C0C0C"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -123,50 +156,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#0C0C0C"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:textColor="#0C0C0C"
-                android:gravity="center"
-                android:text="카페모카"
-                android:textSize="20dp">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/cafemocha"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#0C0C0C"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="0">
-
-            </TextView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:textColor="#0C0C0C"
                 android:layout_width="72dp"
 
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="카라멜마끼야또"
@@ -177,9 +174,8 @@
             <TextView
                 android:id="@+id/caramelmacchiato"
                 android:layout_width="wrap_content"
-                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -192,28 +188,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/weight"
                 android:layout_width="67dp"
-                android:textColor="#0C0C0C"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="에스프레소"
+                android:text="콜드브루커피"
                 android:textSize="20dp">
 
             </TextView>
 
             <TextView
-                android:id="@+id/espresso"
+                android:id="@+id/coldbrewcoffee"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#0C0C0C"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -226,15 +220,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="59dp"
 
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#0C0C0C"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="프라푸치노"
@@ -246,8 +239,7 @@
                 android:id="@+id/frappuccino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#0C0C0C"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -260,15 +252,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
-                android:textColor="#0C0C0C"
                 android:gravity="center"
                 android:text="핫초코"
                 android:textSize="20dp">
@@ -279,8 +270,7 @@
                 android:id="@+id/hotchocolate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="#0C0C0C"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -294,19 +284,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
-
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="53dp"
-                android:textColor="#0C0C0C"
+                android:layout_width="62dp"
+
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="플레인요거트스무디"
+                android:text="요거트스무디"
                 android:textSize="20dp">
 
             </TextView>
@@ -315,7 +304,7 @@
                 android:id="@+id/smoothie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#0C0C0C"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="0">
@@ -325,32 +314,95 @@
 
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="64dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="우유"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/milk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0">
+
+            </TextView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="61dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="바닐라 플랫 화이트"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/vanillaflatwhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0">
+
+            </TextView>
+
+        </LinearLayout>
+
         <TextView
-          android:layout_marginTop="20dp"
-          android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="결제 수단"
             android:textColor="#0C0C0C"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="결제 수단"
-          android:layout_gravity="center"></TextView>
+            android:textSize="20dp"></TextView>
+
         <ImageView
 
             android:id="@+id/payment"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:visibility="invisible"
+            android:layout_marginTop="5dp"
 
-            android:layout_marginTop="20dp"
-            android:src="@drawable/money">
+            android:src="@drawable/money"
+            android:visibility="invisible">
 
         </ImageView>
 
 
-
-
-
-
     </LinearLayout>
 
-    </LinearLayout>
+</LinearLayout>
