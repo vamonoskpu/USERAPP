@@ -48,6 +48,7 @@ public class OrderActivity extends AppCompatActivity {
     // Intent intent;
     FirebaseDatabase database;
     DatabaseReference reference;
+    DatabaseReference reference1;
     Button completebtn;
 
     ImageView money;
@@ -57,6 +58,7 @@ public class OrderActivity extends AppCompatActivity {
 
 
     TextView textView;
+    TextView textView1;
 
 
     //음성입력부분
@@ -103,9 +105,12 @@ public class OrderActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Usermenu");
+        reference1 = database.getReference("8VZm145EEvgpOKfyjWzghGP4zji2");
 
 
         textView = findViewById(R.id.textview);
+        textView1 = findViewById(R.id.textView2);
+
         card = findViewById(R.id.card);
         money = findViewById(R.id.money);
         clickcard = findViewById(R.id.clickcard);
@@ -122,11 +127,25 @@ public class OrderActivity extends AppCompatActivity {
 
         bufferSize = AudioRecord.getMinBufferSize(8000, AudioFormat.CHANNEL_CONFIGURATION_MONO, AudioFormat.ENCODING_PCM_16BIT);
 
-        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 MenuData menuData = dataSnapshot.getValue(MenuData.class);
                 textView.setText(menuData.getUsermenu());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+      reference1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Result result1 = dataSnapshot.getValue(Result.class);
+                textView1.setText(result1.getResult());
+
             }
 
             @Override

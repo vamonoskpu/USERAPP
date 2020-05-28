@@ -22,7 +22,7 @@ public class MenuActivity extends WearableActivity {
         // Enables Always-on
         setAmbientEnabled();
 
-        mTextView = (TextView) findViewById(R.id.text);
+
         Button btn = (Button) findViewById(R.id.order_btn);
         Button btn1 = (Button) findViewById(R.id.ordercheck_btn);
 
