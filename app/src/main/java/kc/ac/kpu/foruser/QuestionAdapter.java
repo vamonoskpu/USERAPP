@@ -44,13 +44,9 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
         QuestionData questionData = mData.get(position);
 
-
-
        holder.title.setText(questionData.getTitle());
        holder.writer.setText(questionData.getWriter());
        holder.answer.setText(questionData.getAnswer());
-
-
 
     }
 

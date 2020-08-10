@@ -237,9 +237,6 @@ public class OrderActivity extends AppCompatActivity {
                     handler.postDelayed(r, 4000); //4초 동안만 녹음
                 }// else if (event.getAction() == MotionEvent.ACTION_UP) {
 
-
-
-
              //   }
                 return false;
             }

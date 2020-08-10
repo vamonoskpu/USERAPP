@@ -76,6 +76,5 @@ public class Answerquestion extends AppCompatActivity {
         });
 
 
-
     }
 }
