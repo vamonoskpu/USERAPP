@@ -35,8 +35,6 @@ public class MenuActivity extends Fragment {
     private Button questions;
 
 
-
-
     public static MenuActivity newInstance(){
         MenuActivity menuActivity = new MenuActivity();
         return menuActivity;
@@ -52,10 +50,6 @@ public class MenuActivity extends Fragment {
         ordercheck = (Button)view.findViewById(R.id.ordercheckbtn);
         menulistbtn = (Button)view.findViewById(R.id.menulist);
         questions = (Button) view.findViewById(R.id.questionbtn);
-
-
-
-
 
         order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,8 +75,6 @@ public class MenuActivity extends Fragment {
             }
         });
 
-
-
         questions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,14 +82,6 @@ public class MenuActivity extends Fragment {
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
-
 
         return view;
     }

@@ -81,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         setFrag1(0);         //첫 화면
 
     }

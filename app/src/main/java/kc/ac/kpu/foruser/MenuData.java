@@ -4,9 +4,7 @@ public class MenuData {
 
     public String usermenu;
 
-    public MenuData(){
-
-    }
+    public MenuData(){ }
     public MenuData(String usermenu){
         this.usermenu=usermenu;
     }

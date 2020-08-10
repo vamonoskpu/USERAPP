@@ -51,9 +51,6 @@ public class QuestionData {
     }
 
 
-
-
-
     public String getAnswer() {
         return answer;
     }

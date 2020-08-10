@@ -72,12 +72,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
             writer = itemView.findViewById(R.id.writer);
             answer= itemView.findViewById(R.id.answer);
 
-
-
-
             //뷰 객체에 대한 참조
-
-
 
         }
     }
